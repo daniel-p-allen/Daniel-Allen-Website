@@ -10,7 +10,7 @@ import VideoPlayer from './components/VideoPlayer.vue'
     <img class="avatar" height="150px" src="./assets/dan.jpeg" alt="Photo of Daniel Allen" />
      
     <div class="wrapper">
-      <TopNav msg="PORTFOLIO DANIEL ALLEN 2023" />
+      <TopNav msg="Daniel Allen" />
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -36,7 +36,7 @@ import VideoPlayer from './components/VideoPlayer.vue'
 
 <style scoped>
 .router-view-cyan {
-  background-color: cyan; 
+  background-color: white; 
 }
 
 .view-container {
@@ -77,7 +77,7 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 400px) {
   header {
     display: flex;
     place-items: center;

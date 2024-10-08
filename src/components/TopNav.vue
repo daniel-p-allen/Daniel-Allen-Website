@@ -12,7 +12,7 @@ defineProps({
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      BA(IT) T2 Starter of 2023
+      My spot online...
     </h3>
   </div>
 </template>

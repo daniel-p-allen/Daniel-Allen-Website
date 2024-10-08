@@ -6,15 +6,25 @@
 
     <img class="avatar" height="150px" src="../assets/dan.jpeg" alt="Photo of Daniel Allen" />
     <div class="title-text-content">  
-      <h1>About - Daniel Allen</h1>
+      <h1>A bit of Info?</h1>
       
     </div>
 
   </div>
   <div class="card-content">
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, pariatur autem suscipit corrupti libero sequi iste atque optio rem eos ad dignissimos, neque, cupiditate aliquam aperiam similique amet. Libero quasi repellat recusandae laudantium, autem ad sequi consequatur aliquam debitis ab? Tempora placeat perferendis beatae ipsam in! Veniam, magni? Accusamus, molestias! </p>
+ 
+    <p>My career has evolved from a deep foundation in marketing and MarTech to cloud computing and application development, driven by a passion for aligning technology with real business needs. Early in my journey, I gained valuable experience managing client relations, databases, and web development. This work gave me a strong understanding of customer experience, a skill that has continued to inform my approach to IT solutions. As I transitioned fully into the tech space, I pursued certifications and experience in AWS and Salesforce, combining those with tools like Jira, Git, SQL, and MongoDB to enhance my ability to deliver comprehensive cloud-based solutions.</p>
+
+    <p>Working at a Department solidified my technical foundations, where I supported a DevOps team in a cloud-based Salesforce ecosystem running on AWS. This role gave me critical exposure to cloud infrastructure, team collaboration, and system integrations at scale. While I wasn’t directly managing AWS, my work within this environment strengthened my technical understanding of cloud platforms and modern DevOps practices.</p>
+
+    <p>At The Property Platform (A tech business for the realestate industry), I applied these skills to support the creation and implementation of a new financial system across more than 50 franchises. Here, I managed Salesforce administration, performed testing, and leveraged no-code solutions to optimize processes. My crossover skills, from business-focused MarTech to cloud-driven IT, allowed me to deliver a system that not only met technical requirements but also enhanced the user experience and operational efficiency for the franchise network.</p>
+
+    <p>Recently, I returned to education to deepen my technical expertise in object-oriented design and modern frameworks like Vue and Node.js. This return demonstrates my commitment to chasing my dream of becoming a top-tier application developer. The combination of practical experience, academic learning, and a customer-centric mindset uniquely positions me to create IT solutions that are both technically sound and user-driven.</p>
     
-    <h2>Upcoming Projects</h2>
+    <h3>Explore Further</h3>
+    <a href="https://github.com/daniel-p-allen/" onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;">Visit My GitHub Repository</a>
+    
+    <!-- <h2>Upcoming Projects</h2>
     <table>
       <tr>
         <th>Project</th>
@@ -22,24 +32,24 @@
         <th>Date</th>
       </tr>
       <tr>
-        <td>Lost In Space Game</td>
-        <td>A task to learn about, and adjust the mechanics of a C++ coded game.</td>
-        <td class="link"><a href="#">Feb 2024</a></td>
+        <td>Prototype Grocery Management System</td>
+        <td>Demo of an IOT solution: full stack, microserviced, AWS cloud based, load balanced, multiple nodes utilised. Node.JS, Bash, HTML, CSS, JS</td>
+        <td class="link"><a href="#">Sept 2024</a></td>
       </tr>
       <tr>
-        <td>Another Lost In Space Game</td>
-        <td>A task to learn about, and adjust the mechanics of a C++ coded game.</td>
+        <td>Another Project</td>
+        <td>To be updated.</td>
         <td class="link"><a href="#">April 2024</a></td>
       </tr>
       <tr>
-        <td>The Last Lost In Space Game</td>
-        <td>A task to learn about, and adjust the mechanics of a C++ coded game.</td>
-        <td class="link"><a href="#">Jan 2025</a></td>
+        <td>Lost In Space Uni Task</td>
+        <td>Uni task to learn about the mechanics of C++ and Splashkit.</td>
+        <td class="link"><a href="#">Aug 2023</a></td>
       </tr>
 
     </table>
-    <h3>Further Information</h3>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, pariatur autem suscipit corrupti libero sequi iste atque optio rem eos ad dignissimos, neque, cupiditate aliquam aperiam similique amet. Libero quasi repellat recusandae laudantium, autem ad sequi consequatur aliquam debitis ab? Tempora placeat perferendis beatae ipsam in! Veniam, magni? Accusamus, molestias! </p>
+    <h3>Further Information</h3> -->
+    <p>Please be aware this site is under construction. </p>
     
   
   </div>  

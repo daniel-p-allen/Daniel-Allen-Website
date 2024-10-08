@@ -10,27 +10,26 @@ import ContactForm from './contact.vue';
 
     <img class="avatar" height="150px" src="../assets/dan.jpeg" alt="Photo of Daniel Allen" />
     <div class="title-text-content">  
-      <h1>Home Page Welcome</h1>
+      <h1>Thanks for the visit!</h1>
       
     </div>
 
   </div>
   <div class="card-content">
-    <p>Welcome to my portfolio, built with precision using the Vue framework. Here, you'll find a curated showcase of my current projects from Deakin University alongside past creations that stemmed from my personal passion for programming. Delve in to explore both my academic and hobbyist endeavors.</p>
+    <p>Take a quick look at the About page for some information about myself and my recent journey. Whilst I am currently updating this site, please feel free to bookmark the page and take a look a bit down the track to see the finished version.</p>
     
-    <h3>Explore Further</h3>
-    <p>Feel free to navigate through the website to see my accomplishments. For direct communication, make use of the contact form provided below. Additionally, you'll find links to my social media profiles. I'm eager to connect and discuss potential collaboration, employment, or placement opportunities.</p>
+    <h3>Explore My GitHub</h3>
+    <a href="https://github.com/daniel-p-allen/" onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;">Visit My GitHub Repository</a>
+
   </div>
  
-  <div class="card-content">
-    <h3>Contact Me</h3>
-    <p>Feel free to contact me via the form below. I'll endeavour to respond to your message as soon as possible.</p>
-    <!-- Main contact form and example for all of the various coding options -->
+  <!-- <div class="card-content">
+    <h3>Contact:</h3>
     <div class="card-content">
     <ContactForm />
     </div>
 
-  </div>   
+  </div>    -->
  
 </div>
 </template>

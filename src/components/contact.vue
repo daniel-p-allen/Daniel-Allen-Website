@@ -11,39 +11,35 @@
         <label for="message">Message:</label><br>
         <textarea id="message" name="message" rows="4" cols="50" v-model="formData.message"></textarea><br>
         
-        <label>
-          <input type="checkbox" v-model="formData.subscribe"> Subscribe to newsletter
-        </label>
         <br>
         
         <!-- using v-if and v-for -->
-        <h3>
-            Where did you hear about us?
-        </h3>
+        <h4>
+            Where did you find me?
+        </h4>
         <span>Selected: {{ selected_option }}</span>
         <br>
         <!-- Drop down example -->
         <select v-model="selected_option">
-            <option disabled value="">Please select one</option>
+            <option disabled value="">Select</option>
             <option>Google</option>
             <option>Facebook</option>
             <option>Twitter</option>
             <option>LinkedIn</option>
             <option>Other</option>
         </select>
-        <br><br>
-        <h3>How did you like my folio?</h3>
+        <br>
         <!-- Radio button example -->
-        <div v-for="option in options" :key="option.value">
+        <!-- <div v-for="option in options" :key="option.value">
             <input type="radio" 
             :id="option.value" 
             :value="option.value" v-model="formData.referralSource" />
             <label :for="option.value">{{ option.text }}</label>
             <br>
             
-        </div>
+        </div> -->
         <br>
-        <span>Choice to send: {{ formData.referralSource }}</span>
+        <span> {{ formData.referralSource }}</span>
         <br>
         <input type="submit" value="Send">
         <input type="button" value="Reset" @click="resetForm">
@@ -77,7 +73,7 @@
             },
             submitted: false,  
             resetAction: false,  
-            selected_option: "Use the dropdown to select an option",
+            selected_option: " ",
             options: [
             { text: 'Brilliant', value: 'brilliant' },
             { text: 'Good', value: 'good' },

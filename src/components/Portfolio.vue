@@ -8,76 +8,40 @@ import VideoPlayer from './VideoPlayer2.vue';
 
     <img class="avatar" height="150px" src="../assets/dan.jpeg" alt="Photo of Daniel Allen" />
     <div class="title-text-content">  
-      <h1>PORTFOLIO - Daniel Allen</h1>
+      <h1>Folio</h1>
       
     </div>
 
   </div>
   <div class="card-content">
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, pariatur autem suscipit corrupti libero sequi iste atque optio rem eos ad dignissimos, neque, cupiditate aliquam aperiam similique amet. Libero quasi repellat recusandae laudantium, autem ad sequi consequatur aliquam debitis ab? Tempora placeat perferendis beatae ipsam in! Veniam, magni? Accusamus, molestias! </p>
+    <p>Under construction. Please bookmark the site and return shortly.</p>
+    <h3>Explore Further</h3>
+    <a href="https://github.com/daniel-p-allen/" onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;">Visit My GitHub Repository</a>
     <!-- Setting up the table. -->
     <table>
       <tr>
         <th>Project</th>
         <th>Description</th>
-        <th>Link</th>
+        <th>Date</th>
       </tr>
       <tr>
-        <td>Lost In Space Game</td>
-        <td>A task to learn about, and adjust the mechanics of a C++ coded game.</td>
-        <td class="link"><a href="#proj1">Link</a></td>
-        
+        <td>Prototype Grocery Management System</td>
+        <td>Demo of an IOT solution: full stack, microserviced, AWS cloud based, load balanced, multiple nodes utilised. Node.JS, Bash, HTML, CSS, JS</td>
+        <td class="link"><a href="#">Sept 2024</a></td>
       </tr>
       <tr>
-        <td>Another Lost In Space Game</td>
-        <td>A task to learn about, and adjust the mechanics of a C++ coded game.</td>
-        <td class="link"><a href="#proj2">Link</a></td>
+        <td>Another Project</td>
+        <td>To be updated.</td>
+        <td class="link"><a href="#">April 2024</a></td>
       </tr>
       <tr>
-        <td>The Last Lost In Space Game</td>
-        <td>A task to learn about, and adjust the mechanics of a C++ coded game.</td>
-        <td class="link"><a href="#proj3">Link</a></td>
+        <td>Lost In Space Uni Task</td>
+        <td>Learning the mechanics of C++ with Splashkit.</td>
+        <td class="link"><a href="#">Aug 2023</a></td>
       </tr>
 
     </table>
-    <h2>Main Portfolio Items</h2>
-    <br>
-    <div class="title-text-content">
-      <h3>Lost In Space Game - Version 1</h3>
-      <a id="proj1"></a>
-      
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae vero tempora blanditiis voluptas tempore fugiat, debitis, tenetur dolorem, reiciendis quibusdam nemo esse sunt ducimus. Animi, voluptas officiis! Sed, maiores suscipit.</p>
-    </div>
-    <!-- Getting the video in place -->
-    <div class = "video-wrapper">
-      <VideoPlayer class = "movie"/>
-    </div>
-    
-    <br>
-    <div class="title-text-content">
-      <h3>Lost In Space Project 2 - Version 2</h3>
-      
-      <p>This is a placeholder for future projects!</p>
-      <a id="proj2"></a>
-    </div>
-    
-    <div class = "video-wrapper">
-      <VideoPlayer class = "movie"/>
-    </div>
-  
-    <br>
-    <div class="title-text-content">
-      <h3>Lost In Code - Version 3</h3>
-      <a id="proj3"></a>
-      
-      <p>This is a placeholder for future projects!</p>
-    </div>
-    
-    <div class = "video-wrapper">
-      <VideoPlayer class = "movie"/>
-    </div>
-    
-    
+   
   
   </div>  
 </div>  
@@ -110,14 +74,14 @@ import VideoPlayer from './VideoPlayer2.vue';
 .about-card {
   min-height: calc(100vh - 150px);
   background: #333;
-  padding: 3em;
+  padding: 2em;
   border-radius: 10px;
   color: white;
 }
 
 .about-card .card-title {
   display: flex;
-  padding: 1em;
+  padding: 0.5em;
   align-items: center;
   background: #222;
   border-radius: 20px;
