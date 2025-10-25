@@ -21,6 +21,7 @@ import { RouterLink } from 'vue-router'
     <!-- Callout / context box -->
     <div class="intro-box">
       <p>
+        <br>Note: Still setting up the projects.<br>
         Below are a few projects that represent different parts of what I work on — full stack, collaboration, AI concepts, applied problem solving.
         <RouterLink to="/about" class="portfolio-link">More background →</RouterLink>
       </p>
@@ -64,6 +65,19 @@ import { RouterLink } from 'vue-router'
           </div>
         </div>
 
+        <div class="project-row">
+          <div class="project-name">
+            <a
+              href="https://github.com/daniel-p-allen/"
+              onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;"
+            >
+              Personal Website danielallen.com.au
+            </a>
+          </div>
+          <div class="project-desc">
+            This Website, a very minimalist approach to presenting some coding projects in order to showcase a variety of skills.
+          </div>
+        </div>
         <div class="project-row">
           <div class="project-name">
             <a
