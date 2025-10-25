@@ -3,110 +3,138 @@ import { RouterLink, RouterView } from 'vue-router'
 import TopNav from './components/TopNav.vue'
 import VideoPlayer from './components/VideoPlayer.vue'
 </script>
-<!-- Setting up the top navigation bar and header for the site -->
+
 <template>
-  <header class="header">
-    
-    <img class="avatar" height="150px" src="./assets/dan.jpeg" alt="Photo of Daniel Allen" />
-     
+  <header class="site-header">
     <div class="wrapper">
       <TopNav msg="Daniel Allen" />
-      <nav>
+      <nav class="main-nav">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/portfolio">Portfolio</RouterLink>
       </nav>
     </div>
-    
   </header>
-  
-  <!-- Including the video effect for the site -->
-  <body>
-    <div class="video">
-    <VideoPlayer class="router-view-cyan"/>
-    </div>
-    <div class="view-container">
-    <!-- This is the encasing div for the router view -->
-    <RouterView  />
-    </div>
-    
-  </body>
 
+  <section class="video-strip">
+    <VideoPlayer />
+  </section>
+
+  <main class="page-body">
+    <RouterView />
+  </main>
 </template>
 
 <style scoped>
-.router-view-cyan {
-  background-color: white; 
-}
-
-.view-container {
-  width: 80%;
-  margin-top: 5rem;
-  margin-left: 5rem;
-  padding: 1.5em;
-  box-sizing: border-box;
-
-} 
-.avatar {
-  height: 150px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 30%;
-  margin: 0 30px;
-}
-.header {
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
   line-height: 1.3;
-  max-height: 100vh;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  min-height: 150px;
+  box-sizing: border-box;
+  padding-right: 20px;
+  padding-left: 300px;
 }
 
-/* This is indicating the active link in the nav bar */
-nav a.router-link-exact-active {
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.main-nav {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.main-nav a {
+  display: inline-block;
+  color: white;
+  padding-right: 1rem;
+  text-decoration: none;
+}
+
+.main-nav a.router-link-exact-active {
   color: rgb(72, 171, 242);
 }
-/* Not sure why it says no references when these are actually being used... */
-nav a.router-link-exact-active:hover {
+
+.main-nav a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
-nav a {
-  display: inline-block;
-  color: white;
-  padding: 0 1rem;
+.video-strip {
+  position: relative;
+  padding-top: 160px;  /* space equal to or slightly larger than your header height */
+  margin-top: 0;       /* remove the negative margin that was pulling it upward */
+  max-height: 110px;   /* show a bit more of the video */
+  overflow: hidden;
+  background: black;
 }
 
-nav a:first-of-type {
-  border: 0;
-}
 
-@media (min-width: 400px) {
-  header {
-    display: flex;
-    place-items: center;
-  }
 
-  .video {
+.page-body {
+  margin-top: -40px;
   width: 100%;
-  height: 250px;
-  margin-top: 15rem;
-  }
-  
-  .header {
-  width: 100%; 
-  background-color: #333; 
-  color: #fff; 
-  position: fixed; 
-  top: 0; 
-  padding: 10px 0; 
-  left: 0; 
-  z-index: 999; 
-  }
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  font-family: 'Montserrat', sans-serif, Helvetica, Arial;
+  color: #fff;
+}
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-    padding: 1rem 0;
-    margin-top: 1rem;
+@media (max-width: 1200px) {
+  .site-header {
+    padding-left: 200px;
   }
 }
 
+@media (max-width: 800px) {
+  .site-header {
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1rem;
+    min-height: 170px;
+    padding-left: 40px;
+    padding-right: 20px;
+  }
+
+  .main-nav {
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    line-height: 1.6;
+  }
+
+  .main-nav a {
+    padding-right: 0.75rem;
+  }
+
+  .video-strip {
+    padding-top: 170px;
+    max-height: 150px;
+  }
+
+  .page-body {
+    margin-top: -30px;
+    padding: 1rem;
+  }
+}
 </style>

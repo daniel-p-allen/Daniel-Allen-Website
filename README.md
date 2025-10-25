@@ -1,29 +1,25 @@
-# PortfolioT1P3
+# Daniel Allen Personal Website
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a responsive single-page site built with Vue 3 and Vite.  
+It serves as a coding example demonstrating component architecture, router integration, and mobile-first design.
 
-## Recommended IDE Setup
+## Features
+- Vue 3 + Vite for fast modular development
+- Fixed navigation header with dynamic routing
+- Embedded video banner using HTML5 video
+- Scoped CSS for isolated styling
+- Fully responsive layout optimized for desktop and mobile
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Structure
+- `/components` – Reusable UI components (TopNav, VideoPlayer, etc.)
+- `/views` – Routed pages (Home, About, Portfolio)
+- `App.vue` – Main layout containing the header, video strip, and routed content
+- `router/index.js` – Route definitions
 
-## Customize configuration
+## Purpose
+This site is part of my developer portfolio and acts as a demonstration of front-end craftsmanship and clean, maintainable Vue code.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+## Running Locally
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```

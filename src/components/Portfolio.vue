@@ -1,158 +1,328 @@
 <script setup>
-// Imports required
-import VideoPlayer from './VideoPlayer2.vue';
+import { RouterLink } from 'vue-router'
 </script>
-<template>
-<div class="about-card">
-  <div class="card-title">
 
-    <img class="avatar" height="150px" src="../assets/dan.jpeg" alt="Photo of Daniel Allen" />
-    <div class="title-text-content">  
-      <h1>Folio</h1>
-      
+<template>
+  <div class="about-card">
+    <!-- Top band with avatar + heading -->
+    <div class="card-title">
+      <img
+        class="avatar"
+        src="../assets/dan.jpeg"
+        alt="Photo of Daniel Allen"
+      />
+      <div class="title-text-content">
+        <div class="welcome-headline">
+          Portfolio / Selected Work
+        </div>
+      </div>
     </div>
 
-  </div>
-  <div class="card-content">
-    <p>Under construction. Please bookmark the site and return shortly.</p>
-    <h3>Explore Further</h3>
-    <a href="https://github.com/daniel-p-allen/" onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;">Visit My GitHub Repository</a>
-    <!-- Setting up the table. -->
-    <table>
-      <tr>
-        <th>Project</th>
-        <th>Description</th>
-        <th>Date</th>
-      </tr>
-      <tr>
-        <td>Prototype Grocery Management System</td>
-        <td>Demo of an IOT solution: full stack, microserviced, AWS cloud based, load balanced, multiple nodes utilised. Node.JS, Bash, HTML, CSS, JS</td>
-        <td class="link"><a href="#">Sept 2024</a></td>
-      </tr>
-      <tr>
-        <td>Another Project</td>
-        <td>To be updated.</td>
-        <td class="link"><a href="#">April 2024</a></td>
-      </tr>
-      <tr>
-        <td>Lost In Space Uni Task</td>
-        <td>Learning the mechanics of C++ with Splashkit.</td>
-        <td class="link"><a href="#">Aug 2023</a></td>
-      </tr>
+    <!-- Callout / context box -->
+    <div class="intro-box">
+      <p>
+        Below are a few projects that represent different parts of what I work on — full stack, collaboration, AI concepts, applied problem solving.
+        <RouterLink to="/about" class="portfolio-link">More background →</RouterLink>
+      </p>
+    </div>
 
-    </table>
-   
-  
-  </div>  
-</div>  
+    <!-- Project list -->
+    <div class="card-content">
+      <div class="project-list">
+
+        <div class="project-row">
+          <div class="project-name">
+            <a
+              href="https://github.com/daniel-p-allen/"
+              onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;"
+            >
+              Full Stack News App
+            </a>
+          </div>
+          <div class="project-desc">
+            A full stack news and newsletter application integrating React on the client side with a Node.js and Express backend hosted on Netlify. 
+            It combines multiple live APIs and external services, including Mailchimp for audience management, SendGrid for transactional email automation, and Stripe for payment handling. 
+            The project demonstrated end-to-end development, from frontend validation and state management to serverless backend logic for subscription and email workflows. 
+            It highlighted the importance of asynchronous request handling, environment variable security, and UX design for user-facing systems.
+          </div>
+        </div>
+
+        <div class="project-row">
+          <div class="project-name">
+            <a
+              href="https://github.com/daniel-p-allen/"
+              onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;"
+            >
+              Collabaccino Project (Project Mgmt. application)
+            </a>
+          </div>
+          <div class="project-desc">
+            Ongoing build with a senior developer. First hand experience with a coding mgmt. professional.
+            Java backend with MongoDB persistence, session/device tracking and access control.
+            Svelte + TypeScript client.
+            Real code review, real standards, real expectations.
+          </div>
+        </div>
+
+        <div class="project-row">
+          <div class="project-name">
+            <a
+              href="https://github.com/daniel-p-allen/"
+              onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;"
+            >
+              TalkSensei
+            </a>
+          </div>
+          <div class="project-desc">
+            Concept for a classroom memory-assisting / sentiment feedback app.
+            Speech-to-text (real time), tone analysis, and running “memory” of prior sessions to improve recall and engagement.
+            Designed for real-time usefulness, not hype.
+          </div>
+        </div>
+
+        <div class="project-row">
+          <div class="project-name">
+            <a
+              href="https://github.com/daniel-p-allen/"
+              onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;"
+            >
+              Smart Bin Sensor Project - Moyne Shire Council
+            </a>
+          </div>
+          <div class="project-desc">
+            Freelancing Hub project for Moyne Shire Council.
+            Technical research, design and vendor analysis for IoT bin sensors, collection optimisation, and cost modelling.
+            Real community-facing problem, not just code. Project delivered and funded, September 2025.
+          </div>
+        </div>
+
+        <div class="project-row">
+          <div class="project-name">
+            <a
+              href="https://github.com/daniel-p-allen/"
+              onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;"
+            >
+              IoT Projects - Pet door & Shopping assistant
+            </a>
+          </div>
+          <div class="project-desc">
+            Sensor-driven: tracking state, events, behaviour.
+            Goal was linking physical triggers (movement, access, usage) to useful data and automation logic. Prototypes designed, built, programmed and tested.
+          </div>
+        </div>
+
+      </div>
+
+      <h3 class="other-sites-heading">Other Sites:</h3>
+      <a
+        href="https://github.com/daniel-p-allen/"
+        onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;"
+      >
+        Visit My GitHub Repository
+      </a>
+      <br /><br />
+      <a
+        href="https://www.linkedin.com/in/danielpeterallen/"
+        onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;"
+      >
+        Visit My LinkedIn Profile
+      </a>
+    </div>
+  </div>
 </template>
 
-
 <style scoped>
-
-.video-wrapper {
-    position: relative;
-    width: 80%;  
-    padding-top: 56.25%;  
-    overflow: hidden;
-    display: flex;
-    justify-content: center; /* centers horizontally */
-    align-items: center;     /* centers vertically */
-}
-
-
-.movie {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-}
-
-
 .about-card {
-  min-height: calc(100vh - 150px);
   background: #333;
-  padding: 2em;
-  border-radius: 10px;
   color: white;
+  border-radius: 10px;
+  padding: 2em;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+  border: 1px solid rgba(255,255,255,0.15);
+  font-family: 'Montserrat', sans-serif, Helvetica, Arial;
+  line-height: 1.5;
 }
 
-.about-card .card-title {
-  display: flex;
-  padding: 0.5em;
-  align-items: center;
+/* top band */
+.card-title {
   background: #222;
   border-radius: 20px;
-}
-
-.about-card .card-title .avatar {
-  height: 150px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 30%;
-  margin: 0 30px;
-}
-
-.about-card .title-text-content p {
-  font-family: 'Montserrat', sans-serif, Helvetica, Arial;
-  margin-bottom: 0;
-  color: rgb(210, 210, 210);
-}
-
-.about-card .title-text-content h2 {
-  font-family: 'Montserrat', sans-serif, Helvetica, Arial;
-  margin-top: 0;
-}
-
-.card-content {
+  padding: 1em 1.5em;
   display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  flex-wrap: wrap;
+  color: #fff;
 }
 
-/* Setting up the table and modifying the look */
-table {
-  border-spacing: 0px;
-  margin: 50px auto;
+.avatar {
+  height: 150px;
+  width: 150px;
+  border-radius: 30%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+  margin-right: 1.5rem;
+  object-fit: cover;
 }
 
-table tr th,
-table tr td {
-  border: 1px solid white;
-  border-top: none;
-  padding: 10px;
+.title-text-content {
+  flex: 1 1 300px;
+  min-width: 250px;
+  color: #fff;
+}
+
+.welcome-headline {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+  color: #fff;
+  text-align: left;
+}
+
+/* callout box */
+.intro-box {
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  max-width: 900px;
+  width: 100%;
   text-align: center;
 }
 
-table tr th:first-of-type,
-table tr td:first-of-type {
-  border-left: none;
+.intro-box p {
+  margin: 0;
+  color: #f0f0f0;
+  font-size: 1.15rem;
+  line-height: 1.5;
 }
 
-table tr th:nth-of-type(3),
-table tr td:nth-of-type(3) {
-  border-right: none;
+.portfolio-link {
+  color: rgb(72, 171, 242);
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.portfolio-link:hover {
+  text-decoration: underline;
+}
+
+/* list of projects */
+.project-list {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: grid;
+  row-gap: 2rem;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) 1fr;
+  column-gap: 1.5rem;
+  align-items: flex-start;
+  background: rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+.project-name a {
+  color: rgb(72, 171, 242);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  display: inline-block;
+}
+
+.project-name a:hover {
+  text-decoration: underline;
+}
+
+.project-desc {
+  color: rgb(230,230,230);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/* footer links */
+.card-content {
+  font-family: 'Montserrat', sans-serif, Helvetica, Arial;
+  color: #fff;
+}
+
+.other-sites-heading {
+  margin-top: 2.5rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #fff;
 }
 
 a {
   color: white;
   text-decoration: none;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 a:hover {
   text-decoration: underline;
-  font-size: 1.2em;
+  font-size: 1.1rem;
 }
 
-@media screen and (max-width: 530px) {
+/* responsive */
+@media screen and (max-width: 700px) {
   .about-card {
     padding: 1em;
   }
-  .about-card .card-title h2 {
-    font-size: 1.3em;
+
+  .card-title {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .avatar {
+    height: 130px;
+    width: 130px;
+    margin: 0 0 1rem 0;
+  }
+
+  .welcome-headline {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  .intro-box {
+    margin: 1.5rem 0 2rem 0;
+    padding: 1rem 1rem;
+  }
+
+  .intro-box p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .project-row {
+    grid-template-columns: 1fr;
+    row-gap: 0.5rem;
+  }
+
+  .project-name a {
+    font-size: 1.05rem;
+  }
+
+  .project-desc {
+    font-size: 0.95rem;
+    line-height: 1.45;
   }
 }
-
 </style>

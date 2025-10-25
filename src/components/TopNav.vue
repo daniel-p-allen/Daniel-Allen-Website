@@ -12,7 +12,7 @@ defineProps({
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      My spot online...
+      A minimalist online location to provide coding examples.
     </h3>
   </div>
 </template>
@@ -22,14 +22,18 @@ h1 {
   font-family: 'Montserrat', sans-serif, Helvetica, Arial;
   font-weight: 500;
   font-size: 2.6rem;
+  line-height: 1.5; 
+  margin-bottom: 0.2rem;
   position: relative;
-  top: -5px;
+  top: -3px;
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-family: 'Montserrat', sans-serif, Helvetica, Arial;
   font-weight: 200;
+  line-height: 1.22;
+  margin-top: 0;
 }
 
 .greetings h1,

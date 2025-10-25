@@ -15,7 +15,7 @@
 <style scoped>
 .video {
   width: 100%;
-  max-height: 250px;
+  
   overflow: hidden;
 }
 
