@@ -2,6 +2,7 @@
   "name": "daniel-allen-website",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Personal site and portfolio. Vue 3 + Vite, deployed as a static build.",
   "license": "MIT",
   "author": "Daniel Allen",
@@ -12,7 +13,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "check": "npm run build && node scripts/check-build-size.mjs",
+    "prerender": "node scripts/prerender.mjs && node scripts/generate-seo-files.mjs",
+    "build:site": "npm run build && npm run prerender",
+    "preview-image": "node scripts/generate-preview-image.mjs",
+    "check": "npm run build:site && node scripts/check-build-size.mjs",
     "verify": "npm run test && npm run check && npm run test:e2e"
   },
   "dependencies": {

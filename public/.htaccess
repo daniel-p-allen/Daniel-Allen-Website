@@ -12,25 +12,34 @@
 DirectoryIndex index.html index.php
 
 # ---------------------------------------------------------------------------
-# Single-page app routing
+# Routing
 # ---------------------------------------------------------------------------
-# The router uses history mode, so /about and /portfolio are handled in the
-# browser by JavaScript — there are no files at those paths on disk. Without the
-# rule below Apache looks for them, finds nothing, and returns 404. The home page
-# would work while every other page broke on refresh or on a direct link.
+# Each route is prerendered to its own HTML file at build time, so /about and
+# /portfolio are real pages with their own titles, descriptions and content —
+# readable by anything that does not run JavaScript.
+#
+# Only the routes that exist are mapped. There is deliberately no catch-all: an
+# earlier version sent every unmatched path to index.html, so a typo or a stale
+# link returned 200 with the full home page. Search engines call that a soft 404
+# and treat it as a quality problem, because it means infinitely many URLs all
+# claim to be a valid page. Unknown paths now return a real 404.
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # A real file or directory is served as-is. This matters: without it the rule
-  # below would swallow requests for the CSS, JavaScript and images too.
+  # Real files — assets, robots.txt, sitemap.xml — are served untouched.
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Anything else is handed to the app, which reads the URL and shows the right page.
-  RewriteRule . /index.html [L]
+  # The two routes that are not the home page, with or without a trailing slash.
+  RewriteRule ^about/?$ /about.html [L]
+  RewriteRule ^portfolio/?$ /portfolio.html [L]
 </IfModule>
+
+# Unknown paths get the home page as their 404 body, but with a 404 status, so a
+# visitor sees something useful and a crawler is told the truth.
+ErrorDocument 404 /index.html
 
 # ---------------------------------------------------------------------------
 # Caching

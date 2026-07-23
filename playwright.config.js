@@ -34,10 +34,14 @@ export default defineConfig({
     }
   ],
 
+  // Builds, prerenders, then serves through a server that mirrors the host's routing.
+  // vite preview cannot be used: it falls back to index.html for unknown paths, so
+  // /about would quietly return the home page and the per-page tests would pass
+  // against the wrong document.
   webServer: {
-    command: 'npm run build && npm run preview -- --port 4173',
+    command: 'npm run build:site && node scripts/serve-dist.mjs 4173',
     url: 'http://localhost:4173',
     reuseExistingServer: !process.env.CI,
-    timeout: 120_000
+    timeout: 180_000
   }
 })

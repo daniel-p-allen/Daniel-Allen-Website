@@ -11,13 +11,33 @@
     <!-- Shown under the link in search results, and by anything that unfurls a URL. -->
     <meta name="description" content="Daniel Allen — software developer building practical, data-driven and AI-assisted systems. Selected projects in C++, Node.js, Vue and Android, with tests and documentation.">
 
+    <!-- Which URL is the real one. Without it, the same page reachable as www and
+         non-www, with and without a trailing slash, reads as competing copies. -->
+    <link rel="canonical" href="https://danielallen.com.au/">
+
     <!-- Open Graph: controls how the link looks when pasted into LinkedIn, Slack or a
          message. Without these the preview is just a bare URL. -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Daniel Allen">
+    <meta property="og:locale" content="en_AU">
     <meta property="og:title" content="Daniel Allen — Software Developer">
     <meta property="og:description" content="Selected projects in C++, Node.js, Vue and Android, with tests and documentation.">
     <meta property="og:url" content="https://danielallen.com.au/">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://danielallen.com.au/preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Daniel Allen — Software Developer">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Daniel Allen — Software Developer">
+    <meta name="twitter:description" content="Selected projects in C++, Node.js, Vue and Android, with tests and documentation.">
+    <meta name="twitter:image" content="https://danielallen.com.au/preview.jpg">
+
+    <!-- Structured data. Replaced per page by scripts/prerender.mjs, which writes an
+         @graph tying the person, the site and this page together by @id. -->
+    <script type="application/ld+json">
+    {}
+    </script>
 
     <style>
       /* Layout constants shared by the header and the page body. They were three
