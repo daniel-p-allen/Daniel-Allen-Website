@@ -44,6 +44,31 @@ browser, waits for the page to render, and writes the result to its own HTML fil
 that page's own title, description, canonical URL and structured data.
 
 ```
+  src/                     npm run build              npm run prerender
+  ├── App.vue                    │                            │
+  ├── components/                ▼                            │
+  ├── views/               ┌───────────┐                      │
+  ├── router/       ──────►│   vite    │──► dist/index.html   │
+  └── site-meta.js         └───────────┘    (empty <div id="app">)
+        │                                          │          │
+        │  titles, descriptions,                   ▼          ▼
+        │  canonicals, JSON-LD            ┌────────────────────────┐
+        └────────────────────────────────►│  headless browser      │
+                                          │  renders each route    │
+                                          └───────────┬────────────┘
+                                                      ▼
+                              dist/index.html      284 words
+                              dist/about.html      252 words   ──► upload
+                              dist/portfolio.html  983 words
+                              dist/sitemap.xml, robots.txt, llms.txt
+```
+
+`src/site-meta.js` is the single source of truth: the router reads it to update the tab
+title as you move between pages, and the prerender step reads it to write the tags into
+the static HTML. One file, so the two cannot drift apart — which is how all three pages
+ended up sharing a single title in the first place.
+
+```
 /            -> dist/index.html        284 words of readable text
 /about       -> dist/about.html        252 words
 /portfolio   -> dist/portfolio.html    983 words
