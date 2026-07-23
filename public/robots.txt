@@ -1,0 +1,8 @@
+# https://danielallen.com.au
+#
+# A three-page personal site. Everything on it is meant to be found.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://danielallen.com.au/sitemap.xml

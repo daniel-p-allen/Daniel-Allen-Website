@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
+import { pageFor, SITE_URL } from '../site-meta.js'
 import HomeView from '../views/HomeView.vue'
 import Portfolio from '../components/Portfolio.vue'
 import AboutView from '../views/AboutView.vue'
@@ -31,6 +33,20 @@ const router = createRouter({
       component: Portfolio
     }
   ]
+})
+
+// Keep the tab title in step with the page. The prerendered HTML already carries the
+// right title when a page is first loaded; this handles moving between pages after
+// that, when no new document is fetched.
+router.afterEach(to => {
+  const page = pageFor(to.path)
+  document.title = page.title
+
+  const description = document.querySelector('meta[name="description"]')
+  if (description) description.setAttribute('content', page.description)
+
+  const canonical = document.querySelector('link[rel="canonical"]')
+  if (canonical) canonical.setAttribute('href', SITE_URL + to.path)
 })
 
 export default router

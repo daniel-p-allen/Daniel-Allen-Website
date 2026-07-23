@@ -1,0 +1,34 @@
+# Daniel Allen
+
+> Software developer building practical, data-driven and AI-assisted systems.
+> Based in Australia. Projects in C++, Node.js, Vue and Android, each with
+> automated tests and written documentation.
+
+Every page of this site is prerendered to static HTML, so its content is readable
+without executing JavaScript.
+
+## Pages
+
+- [Home](https://danielallen.com.au/): what I build and how I approach it
+- [About](https://danielallen.com.au/about): background, and the route into software
+- [Portfolio](https://danielallen.com.au/portfolio): selected projects with links to source
+
+## Selected work
+
+- [llm-anonymizer](https://github.com/daniel-p-allen/llm-anonymizer): C++ desktop tool
+  that strips personal details from email before a language model sees it, then puts
+  them back afterwards. 40 automated tests including a byte-for-byte round trip.
+- [grocery-management-system](https://github.com/daniel-p-allen/grocery-management-system):
+  Arduino keypad, Node services and MongoDB turning product scans into stock levels and
+  a shopping list. 56 black-box tests that drive the real services.
+- [Daniel-Allen-Website](https://github.com/daniel-p-allen/Daniel-Allen-Website): this
+  site. Vue 3 and Vite, prerendered, 58 tests.
+- [LLM-Powered-Quiz-App](https://github.com/daniel-p-allen/LLM-Powered-Quiz-App):
+  Android client and Flask backend against a Hugging Face model.
+- [NewsAppFinal](https://github.com/daniel-p-allen/NewsAppFinal): full stack news and
+  newsletter application with Stripe payments.
+
+## Contact
+
+- GitHub: https://github.com/daniel-p-allen
+- LinkedIn: https://www.linkedin.com/in/danielpeterallen/

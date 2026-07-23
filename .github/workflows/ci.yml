@@ -33,9 +33,21 @@ jobs:
       - name: Unit tests
         run: npm test
 
+      # Prerendering drives a real browser, so this job needs Chromium too.
+      - name: Cache the Playwright browser
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Chromium
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+
       # The repository once carried an 11MB unused video and served a 7.3MB one to
       # every visitor. This is the check that would have caught both.
-      - name: Build, and refuse to ship a bloated one
+      - name: Build, prerender, and refuse to ship a bloated result
         run: npm run check
 
   tests:
