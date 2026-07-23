@@ -1,0 +1,67 @@
+# Apache configuration for the built site.
+#
+# Vite copies everything in public/ to the root of dist/, so this file ends up
+# alongside index.html on the web host.
+
+# ---------------------------------------------------------------------------
+# Which file is the home page
+# ---------------------------------------------------------------------------
+# Apache serves index.php ahead of index.html by default. The host this deploys to
+# had an unrelated index.php sitting in the web root, so the site appeared blank
+# even once index.html was uploaded correctly. Naming index.html first settles it.
+DirectoryIndex index.html index.php
+
+# ---------------------------------------------------------------------------
+# Single-page app routing
+# ---------------------------------------------------------------------------
+# The router uses history mode, so /about and /portfolio are handled in the
+# browser by JavaScript — there are no files at those paths on disk. Without the
+# rule below Apache looks for them, finds nothing, and returns 404. The home page
+# would work while every other page broke on refresh or on a direct link.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # A real file or directory is served as-is. This matters: without it the rule
+  # below would swallow requests for the CSS, JavaScript and images too.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Anything else is handed to the app, which reads the URL and shows the right page.
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Caching
+# ---------------------------------------------------------------------------
+# The build gives every asset a content hash in its filename (index-0aa94999.js),
+# so a changed file is always a new name. Those can be cached hard and forever.
+# index.html must never be cached, or visitors keep loading an old page that
+# points at assets which no longer exist.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|jpe?g|png|svg|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Compression
+# ---------------------------------------------------------------------------
+# Text assets compress well — the JavaScript bundle is 86KB raw and 34KB gzipped.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>

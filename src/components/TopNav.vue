@@ -12,7 +12,7 @@ defineProps({
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      A minimalist online location to provide coding examples.
+      Software developer — practical systems, built to be tested and understood.
     </h3>
   </div>
 </template>

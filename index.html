@@ -5,12 +5,49 @@
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <title>DanielAllen.com.au</title>
+
+    <title>Daniel Allen — Software Developer</title>
+
+    <!-- Shown under the link in search results, and by anything that unfurls a URL. -->
+    <meta name="description" content="Daniel Allen — software developer building practical, data-driven and AI-assisted systems. Selected projects in C++, Node.js, Vue and Android, with tests and documentation.">
+
+    <!-- Open Graph: controls how the link looks when pasted into LinkedIn, Slack or a
+         message. Without these the preview is just a bare URL. -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Daniel Allen — Software Developer">
+    <meta property="og:description" content="Selected projects in C++, Node.js, Vue and Android, with tests and documentation.">
+    <meta property="og:url" content="https://danielallen.com.au/">
+    <meta name="twitter:card" content="summary">
+
     <style>
-      /* Defaults */
+      /* Layout constants shared by the header and the page body. They were three
+         separate magic numbers that had to be kept in step by hand; a change to the
+         header height silently broke the spacing below it. */
+      :root {
+        --header-height: 150px;
+        --banner-height: 110px;
+        --page-max-width: 1200px;
+        --surface: #333;
+        --surface-raised: #222;
+        --page-bg: #1b1b1b;
+        --text: #ffffff;
+        --accent: rgb(72, 171, 242);
+      }
+
+      @media (max-width: 600px) {
+        :root {
+          --header-height: 190px;
+          --banner-height: 80px;
+        }
+      }
+
       body {
         font-family: 'Montserrat', sans-serif, Helvetica, Arial;
-        margin: 0px;
+        margin: 0;
+        /* Without this the page is white, so the dark cards float on a light
+           background and the design reads as half-finished. */
+        background-color: var(--page-bg);
+        color: var(--text);
       }
     </style>
   </head>
