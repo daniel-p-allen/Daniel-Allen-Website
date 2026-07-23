@@ -21,9 +21,9 @@ import { RouterLink } from 'vue-router'
     <!-- Callout / context box -->
     <div class="intro-box">
       <p>
-        Work across full stack, embedded systems and AI-assisted tooling. The first two are
-        the most complete — both carry automated test suites and continuous integration, and
-        both document the reasoning behind how they were built.
+        Work across full stack, embedded systems and AI-assisted tooling. The first three are
+        the most complete — each carries an automated test suite and continuous integration,
+        and each documents the reasoning behind how it was built.
         <RouterLink to="/about" class="portfolio-link">More background →</RouterLink>
       </p>
     </div>
@@ -85,6 +85,28 @@ import { RouterLink } from 'vue-router'
         <div class="project-row">
           <div class="project-name">
             <a
+              href="https://github.com/daniel-p-allen/Daniel-Allen-Website"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Personal Website — danielallen.com.au
+            </a>
+          </div>
+          <div class="project-desc">
+            The site you are reading. Vue 3 and Vite, compiled to a static build and
+            served from a plain host — no backend and no database.
+            <br><br>
+            Audited and rebuilt in July 2026: the build went from 7.5MB to under 250KB
+            after an unused 11MB video and a 7.3MB autoplaying one were removed, and
+            the layout, link handling and heading structure were fixed. It now carries
+            58 automated tests, run at desktop width and at a real phone viewport, plus
+            a check that fails the build if the page weight creeps back up.
+          </div>
+        </div>
+
+        <div class="project-row">
+          <div class="project-name">
+            <a
               href="https://github.com/daniel-p-allen/LLM-Powered-Quiz-App"
               target="_blank"
               rel="noopener noreferrer"
@@ -120,6 +142,7 @@ import { RouterLink } from 'vue-router'
             The architecture separates presentation, logic, and model inference layers for scalability and maintainability.
           </div>
         </div>
+
         <div class="project-row">
           <div class="project-name">
             <a
@@ -140,59 +163,26 @@ import { RouterLink } from 'vue-router'
 
         <div class="project-row">
           <div class="project-name">
-            <span>Collabaccino Project (Project Mgmt. application)</span>
+            <span>Other Projects</span>
           </div>
           <div class="project-desc">
-            Ongoing build with a senior developer. First hand experience with a coding mgmt. professional.
-            Java backend with MongoDB persistence, session/device tracking and access control.
-            Svelte + TypeScript client.
-            Real code review, real standards, real expectations.
-          </div>
-        </div>
-
-        <div class="project-row">
-          <div class="project-name">
-            <a
-              href="https://github.com/daniel-p-allen/Daniel-Allen-Website"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Personal Website danielallen.com.au
-            </a>
-          </div>
-          <div class="project-desc">
-            This Website, a very minimalist approach to presenting some coding projects in order to showcase a variety of skills.
-          </div>
-        </div>
-        <div class="project-row">
-          <div class="project-name">
-            <span>TalkSensei</span>
-          </div>
-          <div class="project-desc">
-            Concept for a classroom memory-assisting / sentiment feedback app.
-            Speech-to-text (real time), tone analysis, and running “memory” of prior sessions to improve recall and engagement.
-            Designed for real-time usefulness, not hype.
-          </div>
-        </div>
-
-        <div class="project-row">
-          <div class="project-name">
-            <span>Smart Bin Sensor Project - Moyne Shire Council</span>
-          </div>
-          <div class="project-desc">
-            Freelancing Hub project for Moyne Shire Council.
-            Technical research, design and vendor analysis for IoT bin sensors, collection optimisation, and cost modelling.
-            Real community-facing problem, not just code. Project delivered and funded, September 2025.
-          </div>
-        </div>
-
-        <div class="project-row">
-          <div class="project-name">
-            <span>IoT Projects - Pet door & Shopping assistant</span>
-          </div>
-          <div class="project-desc">
-            Sensor-driven: tracking state, events, behaviour.
-            Goal was linking physical triggers (movement, access, usage) to useful data and automation logic. Prototypes designed, built, programmed and tested.
+            <strong>Collabaccino</strong> — an ongoing build with a senior developer:
+            Java backend, MongoDB persistence, session and device tracking, access
+            control, and a Svelte + TypeScript client. Real code review and real
+            standards, which is the part that taught me most.
+            <br><br>
+            <strong>Smart Bin Sensor Project, Moyne Shire Council</strong> — technical
+            research, design and vendor analysis for IoT bin sensors, collection
+            optimisation and cost modelling. A community problem rather than a coding
+            exercise. Delivered and funded, September 2025.
+            <br><br>
+            <strong>TalkSensei</strong> — my concept for a classroom memory-assisting
+            and sentiment feedback app: speech-to-text in real time, tone analysis, and
+            a running memory of prior sessions to improve recall and engagement.
+            <br><br>
+            <strong>IoT prototypes</strong> — a pet door and a shopping assistant,
+            built to link physical triggers such as movement, access and usage to useful
+            data and automation logic. Designed, built, programmed and tested.
           </div>
         </div>
 

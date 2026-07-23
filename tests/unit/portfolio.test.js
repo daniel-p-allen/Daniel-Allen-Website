@@ -17,9 +17,36 @@ const mountPortfolio = () =>
   })
 
 describe('the project list', () => {
+  // Five projects with a public repository, plus one panel gathering the four that
+  // have none. They were separate rows of unlinked text before, which read as four
+  // thin entries rather than one group.
   it('renders a row for every project', () => {
     const rows = mountPortfolio().findAll('.project-row')
-    expect(rows.length).toBeGreaterThanOrEqual(9)
+    expect(rows.length).toBe(6)
+  })
+
+  it('gathers the projects without a repository into one panel', () => {
+    const wrapper = mountPortfolio()
+    const other = wrapper.findAll('.project-row').at(-1)
+
+    expect(other.find('.project-name').text()).toBe('Other Projects')
+
+    // Each of the four is still described, just in one place.
+    for (const project of ['Collabaccino', 'Moyne Shire', 'TalkSensei', 'IoT']) {
+      expect(other.text()).toContain(project)
+    }
+  })
+
+  // The site is live, tested and documented, so it belongs with the strongest work
+  // rather than halfway down the page.
+  it('places the personal website among the first three', () => {
+    const titles = mountPortfolio()
+      .findAll('.project-row')
+      .slice(0, 3)
+      .map(row => row.find('.project-name').text())
+      .join(' ')
+
+    expect(titles).toContain('danielallen.com.au')
   })
 
   it('gives every row a title', () => {
