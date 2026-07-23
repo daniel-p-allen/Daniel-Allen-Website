@@ -4,6 +4,14 @@
 # alongside index.html on the web host.
 
 # ---------------------------------------------------------------------------
+# Which file is the home page
+# ---------------------------------------------------------------------------
+# Apache serves index.php ahead of index.html by default. The host this deploys to
+# had an unrelated index.php sitting in the web root, so the site appeared blank
+# even once index.html was uploaded correctly. Naming index.html first settles it.
+DirectoryIndex index.html index.php
+
+# ---------------------------------------------------------------------------
 # Single-page app routing
 # ---------------------------------------------------------------------------
 # The router uses history mode, so /about and /portfolio are handled in the
