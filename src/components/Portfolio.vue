@@ -32,6 +32,43 @@ import { RouterLink } from 'vue-router'
       <div class="project-list">
 
         <div class="project-row">
+  <div class="project-name">
+    <a
+      href="https://github.com/daniel-p-allen/LLM-Powered-Quiz-App"
+      onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;"
+    >
+      LLM-Powered Quiz Platform – Android Client & Flask Backend
+    </a>
+  </div>
+          <div class="project-desc">
+            <strong>Overview:</strong> A full-stack quiz and learning application integrating a large-language-model backend
+            with a multi-user Android client. The system demonstrates secure client–server communication, local data persistence,
+            API design, and LLM integration through the Hugging Face Gemma 3-27B model.
+            <br><br>
+
+            <strong>Frontend (Android):</strong>  
+            Built in Java using Android Studio with XML-based layouts and Retrofit2 for network communication.  
+            The client handles user authentication, question retrieval, answer submission, and result tracking through a
+            REST interface exposed by the Flask API. Local storage and state management are implemented with Room Database
+            (DAO architecture), allowing offline caching and session continuity. The UI applies Material Design principles and
+            clean separation between data, adapter, and view layers for maintainability.
+            <br><br>
+
+            <strong>Backend (Flask + LLM):</strong>  
+            Python Flask server exposing REST endpoints for quiz creation, evaluation, and user/session management.
+            The backend connects to Hugging Face via the Gemma 3-27B inference API, transforming user requests into structured
+            prompts and returning generated questions or reasoning feedback. JWT-style authentication, environment-isolated
+            tokens, and CORS-safe responses ensure secure external access.  
+            The design mirrors production-grade service layers, demonstrating integration between traditional web APIs and
+            transformer-based inference services.
+            <br><br>
+
+            <strong>Connection flow:</strong>  
+            Android app → Flask API (10.0.2.2:5000 during dev / deployed server in production) → Hugging Face LLM.  
+            The architecture separates presentation, logic, and model inference layers for scalability and maintainability.
+          </div>
+        </div>
+        <div class="project-row">
           <div class="project-name">
             <a
               href="https://github.com/daniel-p-allen/"
