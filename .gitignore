@@ -29,3 +29,7 @@ coverage
 
 # Deployment archive built from dist/ for manual upload
 site.zip
+
+# Test artefacts
+test-results/
+playwright-report/

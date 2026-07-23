@@ -1,0 +1,78 @@
+name: checks
+
+# Two jobs, deliberately kept apart — the same split used in llm-anonymizer and
+# grocery-management-system.
+#
+# `checks` is fast and has nothing to be flaky about: the site builds, the unit tests
+# pass, and the build has not quietly grown a multi-megabyte asset.
+#
+# `tests` runs the browser suite, which needs Chromium downloaded. Isolated so that a
+# slow or unavailable browser download cannot mask the deterministic half.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Unit tests
+        run: npm test
+
+      # The repository once carried an 11MB unused video and served a 7.3MB one to
+      # every visitor. This is the check that would have caught both.
+      - name: Build, and refuse to ship a bloated one
+        run: npm run check
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Cache the Playwright browser
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Chromium
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+
+      # Runs against the production build, at desktop width and at a real 375px
+      # phone viewport — a browser window cannot be dragged that narrow by hand, so
+      # this is the only place the mobile layout is genuinely verified.
+      - name: Browser tests
+        run: npm run test:e2e
+
+      - name: Upload the report if something failed
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
